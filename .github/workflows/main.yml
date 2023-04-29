@@ -1,6 +1,11 @@
 name: Deploy to GitHub Pagess
 
-on: workflow_dispatch
+on: 
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+  workflow_dispatch:
 
 concurrency:
   group: reactapp
