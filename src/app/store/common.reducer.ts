@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { createAction } from '@ngrx/store';
 
-export const increment = createAction('[CommonItem Component] Increment');
-export const decrement = createAction('[CommonItem Component] Decrement');
-export const reset = createAction('[CommonItem Component] Reset');
+export const commonIncrement = createAction('[CommonItem Component] Increment');
+export const commonDecrement = createAction('[CommonItem Component] Decrement');
+export const commonReset = createAction('[CommonItem Component] Reset');
 
 export interface CommonItem {
   counter: number;
@@ -15,4 +15,9 @@ export const initialState: CommonItem = {
   title: 'NgRx',
 };
 
-export const commonReducer = createReducer(initialState);
+export const commonReducer = createReducer(
+  initialState,
+  on(commonIncrement, (state) => {
+    return { ...state, counter: state.counter + 1 };
+  })
+);

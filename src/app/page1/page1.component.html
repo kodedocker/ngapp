@@ -1,5 +1,10 @@
 <p>page1 works!</p>
 
+<h1>MyCommon Item</h1>
+<h1>{{ common?.counter }} || {{ common?.title }}</h1>
+<input type="button" value="COmmon INcrement" (click)="commonIncrement()" />
+
+<hr />
 <h1>My Counter {{ myCounter }}</h1>
 <h1>{{ counter$ | async }}</h1>
 
