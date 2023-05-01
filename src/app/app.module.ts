@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/counter.reducer';
 import { matchScoreReducer } from './store/score.reducer';
 import { commonItemReducer } from './store/common.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent, Page1Component, Page2Component],
@@ -18,6 +19,7 @@ import { commonItemReducer } from './store/common.reducer';
       matchScore: matchScoreReducer,
       commonItem: commonItemReducer,
     }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent],
