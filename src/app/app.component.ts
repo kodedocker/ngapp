@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MyAppState } from './store/app.state';
+import { decrement, increment } from './store/counter.reducer';
 
 @Component({
   selector: 'app-root',
@@ -18,5 +19,13 @@ export class AppComponent implements OnInit {
       console.log(state);
       this.counter = state.counter;
     });
+  }
+
+  increment() {
+    this.store.dispatch(increment());
+  }
+
+  decr() {
+    this.store.dispatch(decrement());
   }
 }

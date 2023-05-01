@@ -14,7 +14,6 @@ export class Page1Component implements OnInit {
 
   ngOnInit(): void {
     this.store.subscribe((state) => {
-      console.log(state);
       this.counter = state.counter;
     });
   }

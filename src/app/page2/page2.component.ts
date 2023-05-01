@@ -10,6 +10,7 @@ import { MatchScore } from '../store/score.reducer';
   styleUrls: ['./page2.component.css'],
 })
 export class Page2Component implements OnInit {
+  counter: number | undefined;
   matchScore: MatchScore | undefined;
   commonItem: CommonItem | undefined;
 
@@ -17,7 +18,7 @@ export class Page2Component implements OnInit {
 
   ngOnInit(): void {
     this.store.subscribe((state) => {
-      console.log(state);
+      this.counter = state.counter;
       this.matchScore = state.matchScore;
       this.commonItem = state.commonItem;
     });
