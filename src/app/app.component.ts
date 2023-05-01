@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MyAppState } from './store/app.state';
 import {
+  asyncIncrement,
   decrement,
   increment,
   incrementByPayload,
@@ -38,5 +39,9 @@ export class AppComponent implements OnInit {
 
   incrementBy() {
     this.store.dispatch(incrementByPayload({ incrementBy: 100 }));
+  }
+
+  asyncIncrement() {
+    this.store.dispatch(asyncIncrement());
   }
 }

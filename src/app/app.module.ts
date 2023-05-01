@@ -9,6 +9,8 @@ import { counterReducer } from './store/counter.reducer';
 import { matchScoreReducer } from './store/score.reducer';
 import { commonItemReducer } from './store/common.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './store/counter.effects';
 
 @NgModule({
   declarations: [AppComponent, Page1Component, Page2Component],
@@ -20,6 +22,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       commonItem: commonItemReducer,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([CounterEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],
