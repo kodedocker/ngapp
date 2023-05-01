@@ -1,5 +1,9 @@
 <div>
   <div>Hello World</div>
+  <h1>My Counter {{ myCounter }}</h1>
+  <h1>{{ counter$ | async }}</h1>
+
+  <input type="button" value="Increment" (click)="increment()" />
 
   <hr />
   <app-page1 />
