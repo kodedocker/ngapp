@@ -1,2 +1,10 @@
 <p>page1 works!</p>
 Counter : {{ counter }}
+
+<div>
+  Score Component
+  {{ matchScore?.homeScore }} || {{ matchScore?.awayScore }}
+
+  <input type="button" value="Home Score++" (click)="homeScoreIncrement()" />
+  <input type="button" value="Away Score++" (click)="awayScoreIncrement()" />
+</div>

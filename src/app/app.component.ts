@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MyAppState } from './store/app.state';
 import { decrement, increment } from './store/counter.reducer';
+import { MatchScore } from './store/score.reducer';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { decrement, increment } from './store/counter.reducer';
 export class AppComponent implements OnInit {
   title = 'ngapp';
   counter: number | undefined;
+  matchScore: MatchScore | undefined;
 
   constructor(private store: Store<MyAppState>) {}
 
@@ -18,6 +20,7 @@ export class AppComponent implements OnInit {
     this.store.subscribe((state) => {
       console.log(state);
       this.counter = state.counter;
+      this.matchScore = state.matchScore;
     });
   }
 
