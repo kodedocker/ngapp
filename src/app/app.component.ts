@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { MyAppState } from './store/app.state';
-import { decrement, increment } from './store/counter.reducer';
+import {
+  decrement,
+  increment,
+  incrementByPayload,
+} from './store/counter.reducer';
 import { MatchScore } from './store/score.reducer';
 
 @Component({
@@ -30,5 +34,9 @@ export class AppComponent implements OnInit {
 
   decr() {
     this.store.dispatch(decrement());
+  }
+
+  incrementBy() {
+    this.store.dispatch(incrementByPayload({ incrementBy: 100 }));
   }
 }
