@@ -4,6 +4,9 @@ import { createAction } from '@ngrx/store';
 // ACTIONS
 export const increment = createAction('[Counter Component Sunil ] Increment1');
 export const decrement = createAction('[Counter Compaonent Sunil] Decrement1');
+export const incrementWithPayload = createAction(
+  '[Counter Compaonent With paylaod] Increment With Payload'
+);
 
 export const initialState = 100;
 
@@ -17,5 +20,11 @@ export const counterReducer = createReducer(
 
   on(decrement, (state) => {
     return state - 1;
+  }),
+
+  on(incrementWithPayload, (state) => {
+    let newstate = 100;
+
+    return newstate;
   })
 );
