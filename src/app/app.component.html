@@ -10,6 +10,7 @@
 
 <hr />
 <div>
+  <input type="number" [(ngModel)]="input1" />
   <div>Increment with Paylaod</div>
   <div>
     <input
@@ -21,8 +22,8 @@
   <div>
     <input
       type="button"
-      value="Payload 20"
-      (click)="incementWithPayloadV2(20)"
+      value="Payload Dynamic"
+      (click)="incementWithPayloadDynamic()"
     />
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { Page1Component } from './page1/page1.component';
@@ -13,6 +14,8 @@ import { commonItemReducer } from './store/common.reducer';
   declarations: [AppComponent, Page1Component, Page2Component],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({
       counter: counterReducer,
       matchScore: matchScoreReducer,

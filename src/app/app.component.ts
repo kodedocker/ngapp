@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   title = 'ngapp';
   counter: number | undefined;
   matchScore: MatchScore | undefined;
+  input1: number = 10;
 
   constructor(private store: Store<MyAppState>) {}
 
@@ -30,6 +31,10 @@ export class AppComponent implements OnInit {
 
   increment() {
     this.store.dispatch(increment());
+  }
+
+  incementWithPayloadDynamic() {
+    this.store.dispatch(incrementWithPayload({ incrementBy: this.input1 }));
   }
 
   incementWithPayloadV1(p1: number) {
