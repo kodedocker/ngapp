@@ -10,7 +10,10 @@ export interface PostModel {
 }
 
 // SEGEMETN 2 :: ACTIONS
-export const getPostAction = createAction('[Post Action] Get Post Action');
+export const getPostAction = createAction(
+  '[Post Action] Get Post Action',
+  props<{ id: number }>()
+);
 export const getPostSuccessAction = createAction(
   '[Post Action] Get Post Success Action',
   props<{ post: PostModel }>()

@@ -19,6 +19,8 @@ export class Page1Component implements OnInit {
   module2: Module2Model | undefined;
   post: PostModel | undefined;
 
+  tempId = 1;
+
   constructor(private store: Store<AppRootState>) {}
   ngOnInit(): void {
     this.store.subscribe((state) => {
@@ -37,6 +39,7 @@ export class Page1Component implements OnInit {
   }
 
   getPostActionHandler() {
-    this.store.dispatch(getPostAction());
+    this.tempId += 1;
+    this.store.dispatch(getPostAction({ id: this.tempId }));
   }
 }

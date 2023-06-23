@@ -12,8 +12,8 @@ export class PostEffects {
   getSinglePost$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getPostAction),
-      switchMap(() => {
-        const url = 'https://jsonplaceholder.typicode.com/posts/1';
+      switchMap(({ id }) => {
+        const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
         return this.http.get(url).pipe(
           map((responseData) => {
             return getPostSuccessAction({ post: responseData });
