@@ -6,6 +6,7 @@ import {
   Module1Model,
 } from '../store/module1.redcer';
 import { Module2Model } from '../store/module2.redcer';
+import { getPostAction, PostModel } from '../store/post.reducer';
 import { AppRootState } from '../store/root.reducer';
 
 @Component({
@@ -16,12 +17,14 @@ import { AppRootState } from '../store/root.reducer';
 export class Page1Component implements OnInit {
   module1: Module1Model | undefined;
   module2: Module2Model | undefined;
+  post: PostModel | undefined;
 
   constructor(private store: Store<AppRootState>) {}
   ngOnInit(): void {
     this.store.subscribe((state) => {
       this.module1 = state.module1;
       this.module2 = state.module2;
+      this.post = state.post;
     });
   }
 
@@ -31,5 +34,9 @@ export class Page1Component implements OnInit {
 
   module1Action1WithParamsHandler() {
     this.store.dispatch(demo2Action({ p1: 100 }));
+  }
+
+  getPostActionHandler() {
+    this.store.dispatch(getPostAction());
   }
 }

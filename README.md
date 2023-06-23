@@ -27,3 +27,10 @@
   - Plus Dispatch Action
 
 # STEP 4
+
+- Create Affects
+  - Create root affect or update the root affect
+  - Note: Understand the binding of Action in Affects
+  - Calling the Action on button click
+  - Inspect thd data via Devtools
+  - Access the state and Display in Component

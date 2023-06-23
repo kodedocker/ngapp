@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { rootReducer } from './store/root.reducer';
+import { rootEffects, rootReducer } from './store/root.reducer';
 import { Page1Component } from './page1/page1.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { Page1Component } from './page1/page1.component';
     HttpClientModule,
     StoreModule.forRoot(rootReducer),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot(rootEffects),
   ],
   providers: [],
   bootstrap: [AppComponent],

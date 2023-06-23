@@ -1,5 +1,6 @@
 import { Module1Model, module1Reducer } from './module1.redcer';
 import { Module2Model, module2Reducer } from './module2.redcer';
+import { PostEffects } from './post.effects';
 import { PostModel, postReducer } from './post.reducer';
 
 export interface AppRootState {
@@ -8,8 +9,12 @@ export interface AppRootState {
   post: PostModel;
 }
 
+// Export ALl Reducers
 export const rootReducer = {
   module1: module1Reducer,
   module2: module2Reducer,
   post: postReducer,
 };
+
+// Export ALll Affects
+export const rootEffects = [PostEffects];
