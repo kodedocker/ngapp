@@ -24,3 +24,6 @@
 - Go to Component
   - Generate new component
   - Access the State/Store of Module1 or Module2
+  - Plus Dispatch Action
+
+# STEP 4
