@@ -11,6 +11,7 @@ import { matchScoreReducer } from './store/score.reducer';
 import { commonItemReducer } from './store/common.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { Ajaxpage1Component } from './ajaxpage1/ajaxpage1.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent, Page1Component, Page2Component, Ajaxpage1Component],
@@ -24,6 +25,7 @@ import { Ajaxpage1Component } from './ajaxpage1/ajaxpage1.component';
       commonItem: commonItemReducer,
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
