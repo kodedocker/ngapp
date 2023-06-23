@@ -11,7 +11,7 @@ const url = `https://jsonplaceholder.typicode.com/posts`;
 export class Ajax1Effects {
   constructor(private actions$: Actions, private http: HttpClient) {}
 
-  getTasks$ = createEffect(() =>
+  getAjax1$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ajaxAction1),
       switchMap(() =>
