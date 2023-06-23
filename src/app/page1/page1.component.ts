@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Module1Model } from '../store/module1.redcer';
+import {
+  demo1Action,
+  demo2Action,
+  Module1Model,
+} from '../store/module1.redcer';
 import { Module2Model } from '../store/module2.redcer';
 import { AppRootState } from '../store/root.reducer';
 
@@ -19,5 +23,13 @@ export class Page1Component implements OnInit {
       this.module1 = state.module1;
       this.module2 = state.module2;
     });
+  }
+
+  module1Action1Handler() {
+    this.store.dispatch(demo1Action());
+  }
+
+  module1Action1WithParamsHandler() {
+    this.store.dispatch(demo2Action({ p1: 100 }));
   }
 }
