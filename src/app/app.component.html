@@ -1,34 +1,5 @@
-<div>Hello World</div>
-<div>Counter {{ counter }}</div>
-<input type="button" value="Increment" (click)="increment()" />
-<input type="button" value="Dncrement" (click)="decr()" />
-
-<div>
-  Score Component
-  {{ matchScore?.homeScore }} || {{ matchScore?.awayScore }}
-</div>
+<h1>API DEMO</h1>
+<input type="button" value="GET DATA" />
 
 <hr />
-<div>
-  <input type="number" [(ngModel)]="input1" />
-  <div>Increment with Paylaod</div>
-  <div>
-    <input
-      type="button"
-      value="Payload 10"
-      (click)="incementWithPayloadV1(10)"
-    />
-  </div>
-  <div>
-    <input
-      type="button"
-      value="Payload Dynamic"
-      (click)="incementWithPayloadDynamic()"
-    />
-  </div>
-</div>
-
-<hr />
-<app-page1 />
-<hr />
-<app-page2 />
+<app-ajaxpage1 />

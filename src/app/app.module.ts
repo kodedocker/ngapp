@@ -10,9 +10,10 @@ import { counterReducer } from './store/counter.reducer';
 import { matchScoreReducer } from './store/score.reducer';
 import { commonItemReducer } from './store/common.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { Ajaxpage1Component } from './ajaxpage1/ajaxpage1.component';
 
 @NgModule({
-  declarations: [AppComponent, Page1Component, Page2Component],
+  declarations: [AppComponent, Page1Component, Page2Component, Ajaxpage1Component],
   imports: [
     BrowserModule,
     FormsModule,
